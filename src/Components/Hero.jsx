@@ -1,6 +1,8 @@
-import Spline from '@splinetool/react-spline';
+import React, { Suspense, lazy } from 'react';
 import { Laptop, Github, Linkedin } from 'lucide-react';
 
+
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const Hero = () => {
   return (
@@ -46,7 +48,9 @@ const Hero = () => {
         </div>
         </div>
         
-        <Spline className='absolute lg:top-0 top-[-20] bottom-0 lg:left-[-2%] h-full' scene="https://prod.spline.design/yOoQnggziGoRb62Z/scene.splinecode" />
+        <Suspense fallback={<div className="hidden lg:block h-[500px]"></div>}>
+          <Spline className='w-[300px] h-[300px] hidden lg:block absolute right-0 top-0 w-[600px] h-[600px] lg:translate-x-[200px]' scene=" https://prod.spline.design/tEmpMZm5eJXw4zc2/scene.splinecode" />
+        </Suspense>
 
 
     </main>
